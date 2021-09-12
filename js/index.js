@@ -8,29 +8,29 @@ const createCharacterEntry = (character) => `
     </button>`;
 
 const createListItem = (html) => {
-    const li = document.createElement("li");
-    li.className = "list-group-item";
-    li.innerHTML = html;
-    return li;
+  const li = document.createElement("li");
+  li.className = "list-group-item";
+  li.innerHTML = html;
+  return li;
 };
 
 function handleClick({ dataset: { message } }) {
-    const battlelog = document.getElementById("battlelog");
+  const battlelog = document.getElementById("battlelog");
 
-    const listItem = createListItem(message);
-    battlelog.appendChild(listItem);
+  const listItem = createListItem(message);
+  battlelog.appendChild(listItem);
 }
 
 function afficherPersonnage(personnage) {
-    const characters = document.getElementById("characters");
+  const characters = document.getElementById("characters");
 
-    const listItem = createListItem(createCharacterEntry(personnage));
-    characters.appendChild(listItem);
+  const listItem = createListItem(createCharacterEntry(personnage));
+  characters.appendChild(listItem);
 }
 
 window.onload = () => {
-    afficherPersonnage(new Wizard());
-    afficherPersonnage(new Rogue());
-    afficherPersonnage(new Fighter());
-    afficherPersonnage(new Monk());
+  afficherPersonnage(new Wizard());
+  afficherPersonnage(new Rogue());
+  afficherPersonnage(new Fighter());
+  afficherPersonnage(new Monk());
 };
