@@ -1,3 +1,10 @@
+const createListItem = html => {
+    const li = document.createElement("li");
+    li.className = "list-group-item";
+    li.innerHTML = html;
+    return li;
+};
+
 const createCharacterEntry = character =>
     createListItem(`
     <img class="w-md" src="${character.img}" alt="${character.nom}">
@@ -7,13 +14,6 @@ const createCharacterEntry = character =>
     <button type="button" onclick="handleClick(this)" data-message="${character.support()}">
         <img class="w-xs" src="asset/support.jpg" alt="support">
     </button>`);
-
-const createListItem = html => {
-    const li = document.createElement("li");
-    li.className = "list-group-item";
-    li.innerHTML = html;
-    return li;
-};
 
 function handleClick({ dataset: { message } }) {
     const battlelog = document.getElementById("battlelog");

@@ -24,7 +24,7 @@ class Personnage {
 }
 
 class Wizard extends Personnage {
-    img = "../asset/wizard.jpg";
+    img = "asset/wizard.jpg";
 
     constructor() {
         super("Mage", "une boule de feu", "un sort de soin");
@@ -32,7 +32,7 @@ class Wizard extends Personnage {
 }
 
 class Rogue extends Personnage {
-    img = "../asset/rogue.png";
+    img = "asset/rogue.png";
 
     constructor() {
         super("Roublard", "son arc", "ses mains agiles pour voler votre or");
@@ -40,7 +40,7 @@ class Rogue extends Personnage {
 }
 
 class Fighter extends Personnage {
-    img = "../asset/dwarf.jpg";
+    img = "asset/dwarf.jpg";
 
     constructor() {
         super("Guerrier", "une épée", "son bouclier pour se protéger");
@@ -48,7 +48,7 @@ class Fighter extends Personnage {
 }
 
 class Monk extends Personnage {
-    img = "../asset/monk.jpg";
+    img = "asset/monk.jpg";
 
     constructor() {
         super("Moine", "un coup de poing", "son KI pour augmenter sa force");
