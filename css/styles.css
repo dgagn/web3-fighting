@@ -1,0 +1,13 @@
+button {
+    margin-left: 10px;
+    border: 1px solid black;
+    padding: 0 0 0 0;
+}
+
+.w-md {
+    width: 16rem;
+}
+
+.w-xs {
+    width: 4rem;
+}
