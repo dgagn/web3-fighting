@@ -1,42 +1,36 @@
-function createLi(
-  personnage,
-  attackSrc = "asset/attack.jpg",
-  supportSrc = "asset/support.jpg"
-) {
-  return `
-	<li class="list-group-item">
-        <img class="w-md" src="${personnage.img}" alt="${personnage.img}">
-        <button type="button" id="attack-${personnage.nom.toLowerCase()}">
-            <img class="w-xs" src="${attackSrc}" alt="attack">
-        </button>
-        <button type="button" id="support-${personnage.nom.toLowerCase()}">
-            <img class="w-xs" src="${supportSrc}" alt="support">
-        </button>
-    </li>`;
+const createCharacterEntry = (character) => `
+    <img class="w-md" src="${character.img}" alt="${character.nom}">
+    <button type="button" onclick="handleClick(this)" data-message="${character.attaque()}">
+        <img class="w-xs" src="asset/attack.jpg" alt="attack">
+    </button>
+    <button type="button" onclick="handleClick(this)" data-message="${character.support()}">
+        <img class="w-xs" src="asset/support.jpg" alt="support">
+    </button>`;
+
+const createListItem = (html) => {
+    const li = document.createElement("li");
+    li.className = "list-group-item";
+    li.innerHTML = html;
+    return li;
+};
+
+function handleClick({ dataset: { message } }) {
+    const battlelog = document.getElementById("battlelog");
+
+    const listItem = createListItem(message);
+    battlelog.appendChild(listItem);
 }
 
-function print(nom) {
-	console.log(nom)
-}
-
-const personnages = []
 function afficherPersonnage(personnage) {
-  const characters = document.getElementById("characters");
-  characters.innerHTML += createLi(personnage);
-	personnages.push(personnage)
-}
+    const characters = document.getElementById("characters");
 
-const btnAttackElement = document.getElementById(
-	`attack-moine`
-);
-
-btnAttackElement.onclick = () => {
-	console.log('test')
+    const listItem = createListItem(createCharacterEntry(personnage));
+    characters.appendChild(listItem);
 }
 
 window.onload = () => {
-  afficherPersonnage(new Wizard());
-  afficherPersonnage(new Rogue());
-  afficherPersonnage(new Fighter());
-  afficherPersonnage(new Monk());
+    afficherPersonnage(new Wizard());
+    afficherPersonnage(new Rogue());
+    afficherPersonnage(new Fighter());
+    afficherPersonnage(new Monk());
 };
