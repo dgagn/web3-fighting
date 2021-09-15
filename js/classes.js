@@ -1,12 +1,12 @@
 class Personnage {
-    nom = "";
-    msgAttaque = "";
-    msgDefense = "";
-    img = "";
+    nom = '';
+    msgAttaque = '';
+    msgDefense = '';
+    img = '';
 
     constructor(nom, msgAttaque, msgDefense, imgPath) {
         if (this.constructor === Personnage) {
-            throw new Error("La classe personnage est une classe abstraite.");
+            throw new Error('La classe personnage est une classe abstraite.');
         }
         this.nom = nom;
         this.msgAttaque = msgAttaque;
@@ -24,33 +24,33 @@ class Personnage {
 }
 
 class Wizard extends Personnage {
-    img = "asset/wizard.jpg";
+    img = 'asset/wizard.jpg';
 
     constructor() {
-        super("Mage", "une boule de feu", "un sort de soin");
+        super('Mage', 'une boule de feu', 'un sort de soin');
     }
 }
 
 class Rogue extends Personnage {
-    img = "asset/rogue.png";
+    img = 'asset/rogue.png';
 
     constructor() {
-        super("Roublard", "son arc", "ses mains agiles pour voler votre or");
+        super('Roublard', 'son arc', 'ses mains agiles pour voler votre or');
     }
 }
 
 class Fighter extends Personnage {
-    img = "asset/dwarf.jpg";
+    img = 'asset/dwarf.jpg';
 
     constructor() {
-        super("Guerrier", "une épée", "son bouclier pour se protéger");
+        super('Guerrier', 'une épée', 'son bouclier pour se protéger');
     }
 }
 
 class Monk extends Personnage {
-    img = "asset/monk.jpg";
+    img = 'asset/monk.jpg';
 
     constructor() {
-        super("Moine", "un coup de poing", "son KI pour augmenter sa force");
+        super('Moine', 'un coup de poing', 'son KI pour augmenter sa force');
     }
 }
